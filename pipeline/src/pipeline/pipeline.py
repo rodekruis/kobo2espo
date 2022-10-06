@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 Get a submission with a specific ID from kobo and upload it to espocrm via the API
-
-The script takes exactly 1 argument, which is the kObO ID of the submission
+The script takes the KoBo ID of the submission as input argument
 """
 
 import requests
@@ -34,7 +33,7 @@ def get_kobo_attachment(URL):
 
 
 @click.command()
-@click.option('--koboid', default="", help='import the submission with the specified ID')
+@click.option('--koboid', default="", help='ID of the KoBo submission')
 @click.option('--verbose', '-v', is_flag=True, default=False, help="Print more output.")
 def main(koboid, verbose):
     # Setup EspoAPI
@@ -103,7 +102,7 @@ def main(koboid, verbose):
             # If no conditions apply, map right value
             else:
                 payload_value = df[question]
-        # If field is not filled in in KoBo survey, pass empty string
+        # If field is not filled in KoBo survey, pass empty string
         except KeyError:
             payload_value = ''
         payload[field] = payload_value
