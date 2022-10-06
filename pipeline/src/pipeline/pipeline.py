@@ -33,7 +33,7 @@ def get_kobo_attachment(URL):
 
 
 @click.command()
-@click.option('--koboid', default="", help='import the submission with the specified ID')
+@click.option('--koboid', default="", help='ID of the KoBo submission')
 @click.option('--verbose', '-v', is_flag=True, default=False, help="Print more output.")
 def main(koboid, verbose):
     # Setup EspoAPI
