@@ -9,7 +9,7 @@
 7,addressHouseNumber,addressHouseNumber,text
 8,addressHousenumberAddition,addressHousenumberAddition,text
 9,schoolContact,schoolContact,text
-10,schoolContactPhone,schoolContactPhone,integer
+10,schoolContactPhone,schoolContactPhone,digit
 11,schoolContactEmail,schoolContactEmail,text
 12,schoolStudents,schoolStudents,integer
 13,schoolBrinNumber,schoolBrinNumber,text

@@ -102,10 +102,8 @@ def main(koboid, verbose):
             # If no conditions apply, map right value
             else:
                 # check for type
-                if question_type == 'integer':
-                    only_digits = ''.join(filter(str.isdigit, str(df[question])))
-                    if only_digits != '':
-                        payload_value = int(only_digits)
+                if question_type == 'digit':
+                    payload_value = ''.join(filter(str.isdigit, str(df[question])))
                 else:
                     payload_value = df[question]
         # If field is not filled in KoBo survey, pass empty string
