@@ -101,10 +101,19 @@ def main(koboid, verbose):
                 payload_value = attachment_record['id']
             # If no conditions apply, map right value
             else:
-                payload_value = df[question]
+                # check for type
+                if question_type == 'integer':
+                    only_digits = ''.join(filter(str.isdigit, str(df[question])))
+                    if only_digits != '':
+                        payload_value = int(only_digits)
+                else:
+                    payload_value = df[question]
         # If field is not filled in KoBo survey, pass empty string
         except KeyError:
-            payload_value = ''
+            if question_type == 'select_multiple':
+                payload_value = []
+            else:
+                payload_value = ''
         payload[field] = payload_value
     if verbose:
         print('Espo entity payload:')
