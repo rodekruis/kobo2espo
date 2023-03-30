@@ -77,6 +77,8 @@ def main(koboid, verbose):
             elif question_type == 'attachment':
                 filename = df[question]
                 filename = filename.replace(" ", "_")  # kobo saves attachments by replacing spaces with _
+                filename = filename.replace("(", "")  # and it removes parentheses
+                filename = filename.replace(")", "")
                 file_url = attachments[filename]['url']
                 # encode image in base64
                 file = get_kobo_attachment(file_url)
