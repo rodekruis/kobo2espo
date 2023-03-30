@@ -79,6 +79,8 @@ def main(koboid, verbose):
                 filename = filename.replace(" ", "_")  # kobo saves attachments by replacing spaces with _
                 filename = filename.replace("(", "")  # and it removes parentheses
                 filename = filename.replace(")", "")
+                filename = filename.replace("[", "")
+                filename = filename.replace("]", "")
                 filename = filename.replace("&", "")
                 file_url = attachments[filename]['url']
                 # encode image in base64
