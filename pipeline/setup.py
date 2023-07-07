@@ -16,7 +16,7 @@ setuptools.setup(
     version="0.1",
     author="Tijs Ziere",
     author_email="tziere@redcross.nl",
-    description="KoBotoEspo pipeline",
+    description="KoBoto121 pipeline",
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
     install_requires=install_requires,
@@ -28,7 +28,7 @@ setuptools.setup(
     },
     entry_points={
         'console_scripts': [
-            f"kobo2espo = {PROJECT_NAME}.pipeline:main",
+            f"kobo-121 = {PROJECT_NAME}.pipeline:main",
         ]
     }
 )
